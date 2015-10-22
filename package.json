@@ -1,6 +1,6 @@
 {
   "name": "gulp-cordova-author",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Sets the author of the cordova project.",
   "main": "index.js",
   "scripts": {
