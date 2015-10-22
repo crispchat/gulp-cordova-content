@@ -17,6 +17,9 @@
     "config",
     "author"
   ],
+  "files": [
+    "index.js"
+  ],
   "author": {
     "name": "Sam Verschueren",
     "email": "sam.verschueren@gmail.com"
