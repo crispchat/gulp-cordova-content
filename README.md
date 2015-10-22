@@ -1,4 +1,4 @@
-# gulp-cordova-author
+# gulp-cordova-author [![Build Status](https://travis-ci.org/SamVerschueren/gulp-cordova-author.svg?branch=master)](https://travis-ci.org/SamVerschueren/gulp-cordova-author)
 
 > Sets the author of the cordova project
 
