@@ -1,23 +1,23 @@
-# gulp-cordova-author [![Build Status](https://travis-ci.org/SamVerschueren/gulp-cordova-author.svg?branch=master)](https://travis-ci.org/SamVerschueren/gulp-cordova-author)
+# gulp-cordova-content [![Build Status](https://travis-ci.org/SamVerschueren/gulp-cordova-author.svg?branch=master)](https://travis-ci.org/SamVerschueren/gulp-cordova-content)
 
-> Sets the author of the cordova project
+> Sets the content of the cordova project
 
 ## Installation
 
 ```bash
-npm install --save-dev gulp-cordova-author
+npm install --save-dev gulp-cordova-content
 ```
 ## Usage
 
 ```JavaScript
 var gulp = require('gulp'),
     create = require('gulp-cordova-create'),
-    author = require('gulp-cordova-author');
+    content = require('gulp-cordova-content');
 
 gulp.task('build', function() {
     return gulp.src('dist')
         .pipe(create())
-        .pipe(author('Sam Verschueren', 'sam.verschueren@gmail.com'));
+        .pipe(content('index.min.html'));
 });
 ```
 
@@ -25,26 +25,14 @@ This will set the author properties in the `config.xml` file.
 
 ## API
 
-### author(name [, email [, website]])
+### content(src)
 
-#### name
+#### src
 
 *Required*  
 Type: `string`
 
-The name of the author.
-
-#### email
-
-Type: `string`
-
-The email address of the author.
-
-#### website
-
-Type: `string`
-
-The website of the author.
+The src if the main html file
 
 ## Related
 
