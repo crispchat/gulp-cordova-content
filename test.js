@@ -9,7 +9,7 @@ import fn from './';
 
 const fixture = `<?xml version='1.0' encoding='utf-8'?><widget></widget>`;
 
-function author(name, email, website) {
+function content(src) {
     let file;
 
 	return tempWrite(fixture, 'config.xml')
@@ -17,7 +17,7 @@ function author(name, email, website) {
 			file = config;
 
 			return new Promise(function (resolve) {
-				const stream = fn(name, email, website);
+				const stream = fn(src);
 
 				stream.on('data', function () {
 
@@ -44,32 +44,13 @@ function author(name, email, website) {
 		});
 }
 
-test('name', async t => {
-	t.is(await author('Sam Verschueren'), [
+test('content', async t => {
+	t.is(await content('test.html'), [
 		'<?xml version=\'1.0\' encoding=\'utf-8\'?>',
 		'<widget>',
-        '    <author>Sam Verschueren</author>',
+        '    <content src="test.html" />',
 		'</widget>',
 		''
 	].join(os.EOL));
 });
 
-test('name and email', async t => {
-	t.is(await author('Sam Verschueren', 'sam.verschueren@gmail.com'), [
-		'<?xml version=\'1.0\' encoding=\'utf-8\'?>',
-		'<widget>',
-        '    <author email="sam.verschueren@gmail.com">Sam Verschueren</author>',
-		'</widget>',
-		''
-	].join(os.EOL));
-});
-
-test('name, email and website', async t => {
-	t.is(await author('Sam Verschueren', 'sam.verschueren@gmail.com', 'https://github.com/SamVerschueren'), [
-		'<?xml version=\'1.0\' encoding=\'utf-8\'?>',
-		'<widget>',
-        '    <author email="sam.verschueren@gmail.com" href="https://github.com/SamVerschueren">Sam Verschueren</author>',
-		'</widget>',
-		''
-	].join(os.EOL));
-});

@@ -1,14 +1,14 @@
 {
-  "name": "gulp-cordova-author",
+  "name": "gulp-cordova-content",
   "version": "1.0.0",
-  "description": "Sets the author of the cordova project.",
+  "description": "Sets the content of the cordova project.",
   "main": "index.js",
   "scripts": {
     "test": "xo && ava"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SamVerschueren/gulp-cordova-author.git"
+    "url": "https://github.com/crispchat/gulp-cordova-content.git"
   },
   "keywords": [
     "gulp",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/SamVerschueren/gulp-cordova-author",
   "dependencies": {
-    "cordova-config": "^0.6.2",
+    "cordova-config": "git@github.com:crispchat/cordova-config.git",
     "gulp-util": "^3.0.4",
     "through2": "^2.0.0"
   },
